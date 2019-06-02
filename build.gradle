@@ -15,12 +15,18 @@ configurations {
     }
 }
 
+bootJar {
+    baseName = 'pik-rss-parser'
+    version = '0.1.0'
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.kafka:spring-kafka'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
