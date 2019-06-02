@@ -12,8 +12,8 @@ import java.util.concurrent.ExecutionException;
 @Component
 public class KafkaMessageProducer {
     private static final String KAFKA_BROKERS = "52.169.28.113:9092, 52.169.28.113:9093";
-    private static final String CLIENT_ID = "rssCrawler";
-    private static final String TOPIC_NAME = "testTopic";
+    private static final String CLIENT_ID = "rssParser";
+    private static final String TOPIC_NAME = "parsedMessages";
 
     private Producer<String, ParsedMessage> producer;
 

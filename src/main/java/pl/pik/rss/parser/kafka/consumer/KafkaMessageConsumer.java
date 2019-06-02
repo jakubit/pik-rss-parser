@@ -17,7 +17,7 @@ import java.util.Properties;
 
 @Component
 public class KafkaMessageConsumer {
-    private final String TOPIC = "demo";
+    private final String TOPIC = "rawMessages";
     private final String BOOTSTRAP_SERVERS = "52.169.28.113:9092, 52.169.28.113:9093";
 
     Consumer<RSSChannelInfo, RSSItem> consumer;
