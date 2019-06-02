@@ -37,15 +37,10 @@ public class ParserService {
         String descriptionToProcess = rssItem.getDescription();
         Document parsedDescription = Jsoup.parse(descriptionToProcess).normalise();
 
-        String stringDataHtmlElement = parsedDescription.data();
+        String imgSrc = parsedDescription.select("img").attr("src");
+        String description = parsedDescription.text();
 
-        Whitelist whitelist = Whitelist.none();
-        String img = Jsoup.clean(stringDataHtmlElement, whitelist.addAttributes("img", "src"));
-        String description = Jsoup.clean(stringDataHtmlElement, Whitelist.simpleText());
-
-        String imgSrc = Jsoup.parse(img).select("img").attr("src");
-
-        rssItem.setDescription(description);
         rssItem.setImgUrl(imgSrc);
+        rssItem.setDescription(description);
     }
 }
