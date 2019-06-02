@@ -27,7 +27,7 @@ public class KafkaMessageProducer {
         producer = new KafkaProducer<>(properties);
     }
 
-    public void produce(String channelUrl, ParsedMessage parsedMessage) {
+    public void produce(ParsedMessage parsedMessage) {
         System.out.println(parsedMessage);
         try {
             RecordMetadata recordMetadata = producer.send(new ProducerRecord<>(TOPIC_NAME, parsedMessage)).get();
