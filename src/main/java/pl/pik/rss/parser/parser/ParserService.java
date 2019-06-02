@@ -29,7 +29,7 @@ public class ParserService {
             RSSChannelInfo rssChannelInfo = (RSSChannelInfo) record.key();
             RSSItem rssItem = (RSSItem) record.value();
             processRSSItem(rssItem);
-            messageProducer.produce(rssChannelInfo.getLink(), new ParsedMessage(rssChannelInfo, rssItem));
+            messageProducer.produce( new ParsedMessage(rssChannelInfo, rssItem));
         }
     }
 
